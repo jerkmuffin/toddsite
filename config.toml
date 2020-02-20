@@ -1,0 +1,37 @@
+baseURL = "http://todd.pizza"
+languageCode = "en-us"
+title = "Todd Robinson"
+
+theme = "hugo-apps-theme"
+
+[params]
+  avatar = "/todd.jpg"
+  author = "Hi I'm Todd Robinson"
+  info = "I make audio smell good!"
+
+[[menu.main]]
+  name = "Music I have done things to"
+  weight = 3
+  url = "/work"
+
+[[menu.main]]
+  name = "About Me"
+  weight = 3
+  url = "/me"
+
+[[menu.main]]
+  name = "Pictures"
+  weight = 3
+  url = "https://www.google.com/search?q=todd+robinson&safe=off&client=firefox-b-1-d&sxsrf=ALeKk031bqVG0fhM2IkFkQAke93rK7ttWQ:1582169939756&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjo1O6pmt_nAhWMjp4KHQjpDiUQ_AUoAnoECBgQBA&biw=1745&bih=1103"
+
+[deployment]
+[[deployment.targets]]
+name = "mydeployment"
+# S3; see https://gocloud.dev/howto/blob/#s3
+# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+URL = "s3://todd.pizza?region=us-east-1"
+
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
